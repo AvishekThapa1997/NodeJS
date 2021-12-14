@@ -1,0 +1,26 @@
+.main-header {
+  width: 100%;
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+  background: rgb(136, 136, 80);
+}
+.main-header-nav {
+  height: 100%;
+}
+.main-header-nav-items {
+  list-style: none;
+  display: flex;
+  gap: 3.2rem;
+  height: 100%;
+  align-items: center;
+}
+.main-header-nav-item > a {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+}
+.main-header-nav-item > a:hover,
+a:active,
+a.active {
+  color: #620fff;
+}
