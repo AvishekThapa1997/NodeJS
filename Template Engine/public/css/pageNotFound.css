@@ -1,0 +1,8 @@
+.main-header-nav-item > a:hover,
+a:active,
+a.active {
+  color: white;
+}
+.error-message {
+  text-align: center;
+}

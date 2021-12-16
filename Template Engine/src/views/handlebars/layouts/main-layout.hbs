@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/main-header.css" />
+    {{#if productCSS}}
+      <link rel="stylesheet" href="/css/products.css" />
+    {{/if}}
+    {{#if addProductCSS}}
+      <link rel="stylesheet" href="/css/addProduct.css" />
+    {{/if}}
+    {{#if pageNotFoundCSS}}
+      <link rel="stylesheet" href="/css/pageNotFound.css" />
+    {{/if}}
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="main-header-nav">
+        <ul class="main-header-nav-items">
+          <li class="main-header-nav-item">
+            <a href="/" class={{#if activeShop}}"active"{{/if}}>Shop</a>
+          </li>
+          <li class="main-header-nav-item">
+            <a href="/admin/add-product" class={{#if activeAddProduct}}"active"{{/if}}>Add Product</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    {{{body}}} 
+    {{!-- It has to be name body --}}
+  </body>
+</html>
