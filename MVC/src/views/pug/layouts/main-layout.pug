@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{pageTitle}
+        link(rel="stylesheet", href="/css/main.css")
+        link(rel="stylesheet", href="/css/main-header.css")
+        block styles
+    body 
+        header.main-header
+            nav.main-header-nav
+                ul.main-header-nav-items
+                    li.main-header-nav-item
+                        a(href="/" class=(path === "/" ?"active" : "")) Shop
+                    li.main-header-nav-item
+                        a(href="/admin/add-product" class=(path === "/add-product" ?"active" : "")) Add Product
+        block content                

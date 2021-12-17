@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+a:hover,
+button:hover {
+  cursor: pointer;
+}
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+button {
+  border: none;
+}
+main {
+  padding: 1rem;
+}
