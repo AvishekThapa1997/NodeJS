@@ -1,0 +1,48 @@
+.product-form label,
+textarea[type="text"] {
+  display: block;
+}
+.product-form {
+  max-width: 50rem;
+  margin: auto;
+}
+.form-control {
+  margin-bottom: 1rem;
+}
+.product-form label {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.product-form .form-input {
+  border: 1px solid #dbc441;
+  border-radius: 2px;
+  outline: none;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  resize: none;
+  width: 100%;
+  padding: 0.5rem;
+}
+.product-form .form-input:focus {
+  outline: 2px solid #dbc441;
+}
+.product-form .description {
+  resize: none;
+}
+.btn-submit-control {
+  text-align: center;
+}
+button[type="submit"] {
+  font: inherit;
+  font-size: 1.6rem;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 1em;
+  background: #dbc441;
+  color: white;
+}
+button[type="submit"]:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 1px 1px #dbc441;
+}
