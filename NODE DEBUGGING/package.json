@@ -1,0 +1,19 @@
+{
+  "name": "node-debugging",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js",
+    "debug": "nodemon --inspect ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

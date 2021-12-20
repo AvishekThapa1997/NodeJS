@@ -1,0 +1,15 @@
+{
+  "name": "node-with-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev --respawn ./app.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.11.12",
+    "ts-node-dev": "^1.1.8"
+  }
+}
