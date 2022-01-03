@@ -1,0 +1,16 @@
+[
+  {
+    "id": "24892",
+    "title": "A Book",
+    "imageUrl": "https://www.publicdomainpictures.net/pictures/10000/velka/1-1210009435EGmE.jpg",
+    "description": "This is an awesome book!",
+    "price": "19"
+  },
+  {
+    "id": "0.8772783629205649",
+    "title": "My Book",
+    "imageUrl": "https://api.time.com/wp-content/uploads/2015/06/521811839-copy.jpg?w=824&quality=70",
+    "description": "My Book",
+    "price": "23"
+  }
+]
