@@ -1,0 +1,10 @@
+.order-items {
+  max-width: 40rem;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.order-products {
+  list-style: none;
+  margin-left: 2.4rem;
+}
