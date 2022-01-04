@@ -1,0 +1,52 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/forms.css">
+</head>
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main class="form-main">
+       <form class="form" action="/sign-up" method="POST" novalidate>
+           <div class="form-control">
+                <label for="name">Name</label>
+                <input
+                    class="<%=validationErrors?.name ? 'invalid' : ''%>" 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    value="<%=prevInput?.name ?? ''%>"/>
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input 
+                    class="<%=validationErrors?.email ? 'invalid' : ''%>"
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    value="<%=prevInput?.email ?? ''%>"/>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input 
+                    class="<%=validationErrors?.password ? 'invalid' : ''%>"
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    value="<%=prevInput?.password ?? ''%>"/>
+            </div>
+            <div class="form-control">
+                <label for="confirm-password">Confirm Password</label>
+                <input 
+                    class="<%=validationErrors?.confirmPassword ? 'invalid' : ''%>"
+                    type="password" 
+                    id="confirm-password" 
+                    name="confirmPassword" 
+                    value="<%=prevInput?.confirmPassword ?? ''%>"/>
+            </div>
+            <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+            <div class="submit"><button class="btn" type="Submit">Sign Up</button></div>
+        </form>
+         <%if(errorMessage){%>
+        <p class="error"><%= errorMessage %></p>
+        <%}%>
+    </main>
+</body>
+<%- include('../includes/end.ejs') %>
