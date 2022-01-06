@@ -1,0 +1,69 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+    <!-- <% function isProductAvailable (product) { %>
+    <% return product === null || product === undefined%>
+   <% }%>-->
+   <%- include('../includes/navigation.ejs') %> 
+    <main class="form-main">
+        <form class="form" action="/admin/<% if(editMode){ %>edit-product<%} else {%>add-product<%}%>" method="POST" enctype="multipart/form-data">
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input 
+                    class="<%= validatonErrors?.title ? 'invalid' : '' %>"
+                    type="text" 
+                    name="title" 
+                    id="title" 
+                    value="<%= (editMode || validatonErrors) ? product.title : '' %>">
+            </div>
+            <!-- <div class="form-control">
+                <label for="imageUrl">Image URL</label>
+                <input 
+                    class="<%= validatonErrors?.imageUrl ? 'invalid' : '' %>"
+                    type="text" 
+                    name="imageUrl" 
+                    id="imageUrl" 
+                    value="<%=(editMode || validatonErrors) ? product.imageUrl : '' %>">
+            </div> -->
+            <div class="form-control">
+                <label for="image">Image</label>
+                <input 
+                    type="file" 
+                    name="image" 
+                    id="image" 
+                    >
+            </div>
+            <div class="form-control">
+                <label for="price">Price</label>
+                <input
+                    class="<%= validatonErrors?.price ? 'invalid' : '' %>" 
+                    type="number" 
+                    name="price" 
+                    id="price" 
+                    step="0.01" 
+                    value="<%= (editMode || validatonErrors) ? product.price : '' %>">
+            </div>
+            <div class="form-control">
+                <label for="description">Description</label>
+                <textarea 
+                    class="<%= validatonErrors?.description ? 'invalid' : '' %>"
+                    name="description" 
+                    id="description" 
+                    rows="5"><%= (editMode || validatonErrors) ? product.description : '' %></textarea>
+            </div>
+             <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+            <%if(editMode){%>
+                <input type="hidden" value="<%= product.id %>" name="productId"/>
+            <%}%>
+            <div class="submit">
+            <button class="btn" type="submit"><% if(editMode){ %> Update Product <%} else {%> Add Product <%}%></button>
+            </div>
+        </form>
+            <%if(errorMessage){%>
+                <p class="error"><%= errorMessage %></p>
+            <%}%>
+    </main>
+<%- include('../includes/end.ejs') %>
