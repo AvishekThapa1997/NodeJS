@@ -1,0 +1,35 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/orders.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main>
+            <% if(orders.length > 0){%>
+                <ul class="order-items">
+                <%orders.forEach((order) => {%>
+                    <li class="order-item">
+                        <h1 class="order-id"> # <%= order.id%></h1>
+                        <ul class="order-products">
+                            <%order.products.forEach(product => {%>
+                                <li class="order-product">
+                                    <span><%= product.title%> - <%= product.orderItem.quantity %></span>
+                                    <!-- <form action="/orders/<%=order.id%>" method="post">
+                                        <input type="hidden" value="<%=order.id%>" name="orderId"/>
+                                        <input type="hidden" value="<%=csrfToken%>" name="_csrf"/>
+                                        <button type="submit" class="btn">Invoice</button>
+                                    </form> -->
+                                </li>
+                            <%})%>
+                        </ul>
+                        <div class="order-invoice">
+                            <a href="/orders/<%=order.id%>" class="btn">Invoice</a>
+                        </div>
+                    </li>
+                <%})%>
+                </ul>
+            <%}else {%>
+             <h1>Nothing there!</h1>
+            <%}%>
+        </main>
+        <%- include('../includes/end.ejs') %>
