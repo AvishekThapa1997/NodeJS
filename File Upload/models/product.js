@@ -75,10 +75,16 @@
 // };
 const { Sequelize, DataTypes, Model, where } = require("sequelize");
 const sequelize = require("../util/db");
-
+const { itemPerPage } = require("../util/util");
 class Product extends Model {
-  static fetchAll() {
-    return Product.findAll();
+  static fetchAll(offset = 0) {
+    return Product.findAll({
+      offset: offset,
+      limit: itemPerPage,
+    });
+  }
+  static getTotatNoOfProducts() {
+    return Product.count();
   }
   static getProductById(productId) {
     return Product.findByPk(productId);

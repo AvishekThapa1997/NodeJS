@@ -7,8 +7,6 @@ exports.separateValidationError = (validationErrors) => {
   });
   return validationErrorsObj;
 };
-
-exports.imageTypes = ["image/jpg", "image/png", "image/jpeg"];
 exports.deleteFile = (filePath) => {
   fs.unlink(filePath, (err) => {
     if (err) {
@@ -16,3 +14,5 @@ exports.deleteFile = (filePath) => {
     }
   });
 };
+exports.imageTypes = ["image/jpg", "image/png", "image/jpeg"];
+exports.itemPerPage = 2;
